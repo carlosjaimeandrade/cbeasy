@@ -1,0 +1,11 @@
+.footer{
+    background-color: #007BFF;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+}
+
+.logo{
+    height:40px;
+}

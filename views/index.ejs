@@ -1,0 +1,24 @@
+<%- include('partials/header.ejs')  %>
+
+<%- include('partials/navbar.ejs')  %>
+
+<div class="container">
+  <div class="card m-5">
+    <div class="card-header">
+      Informe os dados
+    </div>
+    <div class="card-body">
+      <form action="">
+        <label for="">Largura</label>
+        <input name="largura" type="number" class="form-control">
+        <label for="">Altura</label>
+        <input name="altura" type="number" class="form-control">
+        <label for="">Comprimento</label>
+        <input name="comprimento" type="number" class="form-control">
+        <button class="btn btn-success float-right mt-3"> Realizar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer.ejs')  %>
