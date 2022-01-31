@@ -25,8 +25,8 @@ connection.authenticate().then(() => {
 
 app.use(session({ cookie: { maxAge: 60000 }, 
     secret: 'woot',
-    resave: false, 
-    saveUninitialized: false}));
+    resave: true, 
+    saveUninitialized: true}));
 
 app.use(flash());
 

@@ -16,7 +16,9 @@
         <label for="">Comprimento (m)</label>
         <input value="<%= dados.c %>" name="comprimento" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1')" type="text" class="form-control" placeholder="0.5">
         <label for="">Total de caixas</label>
-        <input value="<%= dados.caixa%>" name="total" type="number" class="form-control" placeholder="5">
+        <input value="<%= dados.caixa%> " name="total" type="number" class="form-control" placeholder="5">
+        <label for="">Cubagem</label>
+        <input value="<%= dados.cubagem%> m³" disabled class="form-control" placeholder="5">
         <button class="btn btn-success float-right mt-3"> Atualizar</button>
       </form>
     </div>

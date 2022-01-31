@@ -19,7 +19,7 @@ const Cubagem = connection.define('cubagem',{
         allowNull: false
     },
     cubagem:{
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
         allowNull: false
     }
 })
