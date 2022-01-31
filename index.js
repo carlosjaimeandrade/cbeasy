@@ -32,6 +32,10 @@ app.use(flash());
 
 app.use("/", cubagemController);
 
+app.get('*', function(req, res){
+    res.status(404).send('pagina não encontrada')
+  });
+
 // rodando servidor
 app.listen(8080, () => {
     console.log('servidor rodando')

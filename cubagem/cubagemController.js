@@ -51,4 +51,43 @@ router.get('/historico/delete/:id', (req,res)=>{
     })
 })
 
+router.get('/historico/edit/:id', (req,res)=>{
+    const id = req.params.id
+    Cubagem.findOne ({
+        where: { id: id}
+    }).then((dados)=>{
+        console.log(dados)
+        res.render('historicoEdit',{
+            dados: dados
+        })
+    })
+    
+})
+
+router.post('/historico/edit/:id', (req,res)=>{
+    const id = req.params.id
+    const largura = req.body.largura
+    const altura = req.body.altura
+    const comprimento = req.body.comprimento
+    const total = req.body.total
+    const cuba = (largura * altura * comprimento) *total
+
+    Cubagem.update({
+        l: largura,
+        a: altura,
+        c: comprimento,
+        caixa: total,
+        cubagem: cuba
+    },
+    {
+        where: {
+            id: id,
+        }
+    }
+    ).then(() => {
+        req.flash('message', `Atualizado com sucesso` );
+        res.redirect('/historico')
+    })
+})
+
 module.exports = router
