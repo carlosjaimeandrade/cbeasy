@@ -9,3 +9,17 @@
 .logo{
     height:40px;
 }
+
+.historico-body{
+    overflow: auto;
+    height: 450px;
+}
+
+.card-body::-webkit-scrollbar {
+    width: 6px;
+    background: #F4F4F4;
+}
+.card-body::-webkit-scrollbar-thumb {
+    background: #dad7d7;
+    border-radius: 8px;
+}

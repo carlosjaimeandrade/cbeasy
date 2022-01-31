@@ -28,7 +28,9 @@ router.post('/', (req, res) => {
 })
 
 router.get('/historico', (req,res)=>{
-    Cubagem.findAll().then((dados)=>{
+    Cubagem.findAll({
+        order: [['id', 'DESC']]
+    }).then((dados)=>{
         res.render('historico',{
             dados: dados
         })

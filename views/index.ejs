@@ -2,7 +2,7 @@
 
 <%- include('partials/navbar.ejs')  %>
 
-<div class="container">
+<div class="container ">
   <div class="card m-3">
     <div class="card-header">
       Informe os dados
@@ -10,22 +10,22 @@
     <div class="card-body">
       <form method="post">
         <label for="">Largura (m)</label>
-        <input name="largura" type="number" class="form-control">
+        <input name="largura" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1')" type="text" class="form-control" placeholder="0.5">
         <label for="">Altura (m)</label>
-        <input name="altura" type="number" class="form-control">
+        <input name="altura" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1')"  type="text" class="form-control" placeholder="1">
         <label for="">Comprimento (m)</label>
-        <input name="comprimento" type="number" class="form-control">
+        <input name="comprimento" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1')" type="text" class="form-control" placeholder="0.5">
         <label for="">Total de caixas</label>
-        <input name="total" type="number" class="form-control">
+        <input name="total" type="number" class="form-control" placeholder="5">
         <button class="btn btn-success float-right mt-3"> Realizar</button>
       </form>
     </div>
-    
-    <% if(mensagem != ""){ %> 
+
+    <% if(mensagem != ""){ %>
     <div class="alert alert-success" role="alert">
-      <%= mensagem %> 
+      <%= mensagem %>
     </div>
-    <% } %> 
+    <% } %>
   </div>
 </div>
 
