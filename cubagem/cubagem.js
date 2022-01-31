@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
 const connection = require('../database/database')
 
-const Cubagem = connection.define('cuba',{
+const Cubagem = connection.define('cubagem',{
     l:{
         type: Sequelize.FLOAT,
         allowNull: false
@@ -17,9 +17,13 @@ const Cubagem = connection.define('cuba',{
     caixa:{
         type: Sequelize.INTEGER,
         allowNull: false
+    },
+    cubagem:{
+        type: Sequelize.INTEGER,
+        allowNull: false
     }
 })
 
-Cubagem.sync({force: true})
+//Cubagem.sync({force: true})
 
 module.exports = Cubagem;

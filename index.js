@@ -3,8 +3,8 @@ const app = new express();
 const bodyParser = require("body-parser");
 const cubagemController = require("./cubagem/cubagemController")
 const connection = require("./database/database")
-var session = require('express-session');
-const  flash  = require ('connect-flash');
+const session = require('express-session');
+const flash  = require ('connect-flash');
 
 //configurando o view engine
 app.set('view engine', 'ejs');
