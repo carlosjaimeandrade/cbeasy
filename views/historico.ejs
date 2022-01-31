@@ -1,0 +1,40 @@
+<%- include('partials/header.ejs')  %>
+
+<%- include('partials/navbar.ejs')  %>
+
+<div class="container">
+  <div class="card m-3">
+    <div class="card-header">
+      Histórico
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Data</th>
+                <th scope="col">Largura</th>
+                <th scope="col">Altura</th>
+                <th scope="col">Comprimento</th>
+                <th scope="col">Total de caixa</th>
+                <th scope="col">Cubagem</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% dados.forEach(dado=>{ %> 
+              <tr>
+                <th><%= dado.createdAt.toLocaleString() %></th>
+                <td><%= dado.l %></td>
+                <td><%= dado.a %></td>
+                <td><%= dado.c %></td>
+                <td><%= dado.caixa %></td>
+                <td><%= dado.cubagem %></td>
+              </tr>
+              <% }) %> 
+            </tbody>
+          </table>
+    </div>
+    
+  </div>
+</div>
+
+<%- include('partials/footer.ejs')  %>

@@ -25,10 +25,15 @@ router.post('/', (req, res) => {
         req.flash('message', `Total: ${cuba} m³` );
         res.redirect('/')
     })
+})
 
-
- 
-
+router.get('/historico', (req,res)=>{
+    Cubagem.findAll().then((dados)=>{
+        res.render('historico',{
+            dados: dados
+        })
+    })
+   
 })
 
 module.exports = router
