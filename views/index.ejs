@@ -8,16 +8,24 @@
       Informe os dados
     </div>
     <div class="card-body">
-      <form action="">
-        <label for="">Largura</label>
+      <form method="post">
+        <label for="">Largura (m)</label>
         <input name="largura" type="number" class="form-control">
-        <label for="">Altura</label>
+        <label for="">Altura (m)</label>
         <input name="altura" type="number" class="form-control">
-        <label for="">Comprimento</label>
+        <label for="">Comprimento (m)</label>
         <input name="comprimento" type="number" class="form-control">
+        <label for="">Total de caixas</label>
+        <input name="total" type="number" class="form-control">
         <button class="btn btn-success float-right mt-3"> Realizar</button>
       </form>
     </div>
+    
+    <% if(mensagem != ""){ %> 
+    <div class="alert alert-success" role="alert">
+      <%= mensagem %> 
+    </div>
+    <% } %> 
   </div>
 </div>
 
