@@ -32,10 +32,23 @@ router.get('/historico', (req,res)=>{
         order: [['id', 'DESC']]
     }).then((dados)=>{
         res.render('historico',{
-            dados: dados
+            dados: dados,
+            mensagem: req.flash('message')
         })
     })
    
+})
+
+router.get('/historico/delete/:id', (req,res)=>{
+    const id = req.params.id
+    Cubagem.destroy({
+        where: {
+            id: id
+        }
+    }).then(()=>{
+        req.flash('message', `Deletado com sucesso` );
+        res.redirect('/historico')
+    })
 })
 
 module.exports = router

@@ -8,6 +8,11 @@
       Histórico
     </div>
     <div class="card-body historico-body">
+      <% if(mensagem != ""){ %>
+        <div class="alert alert-success" role="alert">
+          <%= mensagem %>
+        </div>
+        <% } %>
         <table class="table table-striped table-bordered table-hover">
             <thead>
               <tr>
@@ -17,6 +22,7 @@
                 <th scope="col">Comprimento</th>
                 <th scope="col">Total de caixa</th> 
                 <th scope="col">Cubagem</th>
+                <th>Ações</th>
               </tr>
             </thead>
             <tbody>
@@ -28,6 +34,7 @@
                 <td><%= dado.c %></td>
                 <td><%= dado.caixa %></td>
                 <td><%= dado.cubagem %></td>
+                <td><a href="/historico/delete/<%= dado.id %>"><i class="fa fa-ban" aria-hidden="true"></a></i></td>
               </tr>
               <% }) %> 
             </tbody>
